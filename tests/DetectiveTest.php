@@ -56,5 +56,12 @@ class DetectiveTest extends \PHPUnit_Framework_TestCase
                 'emails' => ['joe@mysite.com']
             ]
         ];
+
+        yield [
+            'My: reen@mail.com and Friend: alex@mail.com',
+            [
+                'emails' => ['reen@mail.com', 'alex@mail.com']
+            ]
+        ];
     }
 }
