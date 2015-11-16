@@ -49,5 +49,12 @@ class DetectiveTest extends \PHPUnit_Framework_TestCase
             '',
             []
         ];
+
+        yield [
+            'Hi my name is Joe, I can be contacted at joe@mysite.com. I am also on Twitter.',
+            [
+                'emails' => ['joe@mysite.com']
+            ]
+        ];
     }
 }
