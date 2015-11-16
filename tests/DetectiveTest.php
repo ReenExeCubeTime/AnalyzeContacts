@@ -17,7 +17,7 @@ class DetectiveTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider dataProvider
+     * @dataProvider dataProviderWrapper
      * @param $subject
      * @param array $expect
      */
@@ -26,16 +26,28 @@ class DetectiveTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($this->team->search($subject), $expect);
     }
 
+    public function dataProviderWrapper()
+    {
+        $default = [
+            'phones' => [],
+            'emails' => [],
+            'urls' => [],
+            'skypes' => [],
+        ];
+
+        foreach ($this->dataProvider() as list($subject, $expect)) {
+            yield [
+                $subject,
+                array_merge($default, $expect)
+            ];
+        }
+    }
+
     public function dataProvider()
     {
         yield [
             '',
-            [
-                'phones' => [],
-                'emails' => [],
-                'urls' => [],
-                'skypes' => [],
-            ]
+            []
         ];
     }
 }
