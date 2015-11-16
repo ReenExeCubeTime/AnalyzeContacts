@@ -31,7 +31,10 @@ class DetectiveTest extends \PHPUnit_Framework_TestCase
         yield [
             '',
             [
-                'phones' => []
+                'phones' => [],
+                'emails' => [],
+                'urls' => [],
+                'skypes' => [],
             ]
         ];
     }

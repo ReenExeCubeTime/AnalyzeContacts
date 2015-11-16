@@ -12,6 +12,8 @@ class SearcherTeam implements SearcherInterface
     public function add(AbstractSpecialSearcher $searcher)
     {
         $this->list[] = $searcher;
+
+        return $this;
     }
 
     public function search($subject)

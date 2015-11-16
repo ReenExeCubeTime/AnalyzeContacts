@@ -10,7 +10,12 @@ class DetectiveBuilder
     public function getContactSearcherTeam()
     {
         $team = new SearcherTeam();
-        $team->add(new PhoneSearcher());
+        $team
+            ->add(new PhoneSearcher())
+            ->add(new EmailSearcher())
+            ->add(new UrlSearcher())
+            ->add(new SkypeSearcher())
+        ;
         return $team;
     }
 }
