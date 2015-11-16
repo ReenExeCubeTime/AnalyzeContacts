@@ -63,5 +63,15 @@ class DetectiveTest extends \PHPUnit_Framework_TestCase
                 'emails' => ['reen@mail.com', 'alex@mail.com']
             ]
         ];
+
+        yield [
+            'Сайт: http://www.ekonomtaxi.com.ua https://www.ekonomtaxi.com.ua',
+            [
+                'urls' => [
+                    'http://www.ekonomtaxi.com.ua',
+                    'https://www.ekonomtaxi.com.ua',
+                ]
+            ]
+        ];
     }
 }

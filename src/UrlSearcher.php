@@ -8,6 +8,10 @@ class UrlSearcher extends AbstractSpecialSearcher
 
     public function search($subject)
     {
+        if (preg_match_all('#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#', $subject, $matches)) {
+            return $matches[0];
+        }
+
         return [];
     }
 }
