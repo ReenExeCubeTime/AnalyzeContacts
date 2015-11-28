@@ -74,10 +74,12 @@ class DetectiveTest extends \PHPUnit_Framework_TestCase
         ];
 
         yield [
-            'Контакты: www.taxi21.in.ua',
+            'Контакты: taxi21.in.ua, www.taxi21.in.ua, http://www.taxi21.in.ua/',
             [
                 'urls' => [
+                    'taxi21.in.ua',
                     'www.taxi21.in.ua',
+                    'http://www.taxi21.in.ua/',
                 ]
             ]
         ];
