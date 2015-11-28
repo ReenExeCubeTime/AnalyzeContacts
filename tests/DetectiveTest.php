@@ -65,11 +65,19 @@ class DetectiveTest extends \PHPUnit_Framework_TestCase
         ];
 
         yield [
-            'Сайт: http://www.ekonomtaxi.com.ua https://www.ekonomtaxi.com.ua',
+            'Сайт: www.ekonomtaxi.com.ua',
             [
                 'urls' => [
-                    'http://www.ekonomtaxi.com.ua',
-                    'https://www.ekonomtaxi.com.ua',
+                    'www.ekonomtaxi.com.ua',
+                ]
+            ]
+        ];
+
+        yield [
+            'Контакты: www.taxi21.in.ua',
+            [
+                'urls' => [
+                    'www.taxi21.in.ua',
                 ]
             ]
         ];

@@ -7,21 +7,28 @@ class SearcherTeam implements SearcherInterface
     /**
      * @var AbstractSpecialSearcher[]
      */
-    private $list = [];
+    private $map = [];
 
+    /**
+     * @param AbstractSpecialSearcher $searcher
+     * @return $this
+     */
     public function add(AbstractSpecialSearcher $searcher)
     {
-        $this->list[] = $searcher;
+        $this->map[$searcher->getType()] = $searcher;
 
         return $this;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function search($subject)
     {
-        $map = [];
-        foreach ($this->list as $searcher) {
-            $map[$searcher->getType()] = $searcher->search($subject);
+        $result = [];
+        foreach ($this->map as $type => $searcher) {
+            $result[$type] = $searcher->search($subject);
         }
-        return $map;
+        return $result;
     }
 }
