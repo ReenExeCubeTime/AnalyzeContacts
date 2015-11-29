@@ -83,5 +83,14 @@ class DetectiveTest extends \PHPUnit_Framework_TestCase
                 ]
             ]
         ];
+
+        yield [
+            'Контакты: www.kiev.taxico.com.ua',
+            [
+                'urls' => [
+                    'www.kiev.taxico.com.ua',
+                ]
+            ]
+        ];
     }
 }
