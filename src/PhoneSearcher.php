@@ -11,40 +11,17 @@ class PhoneSearcher extends AbstractSpecialSearcher
      */
     public function search($subject)
     {
-        $codeList = [
-            // Київ
-            '044',
-            // Дніпропетровськ
-            '056',
+        $pre = "\+?(38|8)";
+        $separator = '[ -]?';
 
-            '050',
-            '063',
-            '066',
-            '067',
-            '068',
-            '073',
-            '091',
-            '092',
-            '093',
-            '094',
-            '095',
-            '096',
-            '097',
-            '098',
-            '099',
-        ];
-
-        $codeListString = join('|', $codeList);
-        $code = "(\(($codeListString)\)|($codeListString))";
-
-        $separator = '( |-)?';
+        $code = $this->getCode(3);
         $main = join($separator, array_fill(0, 7, '\d{1}'));
+
 
         $list = [
             // +38 (044) 237-70-70
-            "\+38$separator$code$separator$main",
             // 8 (044) 237-93-93
-            "8$separator$code$separator$main",
+            "$pre$separator$code$separator$main",
             // 044 2337233
             // 044-270-0000
             // (044) 465-5-465
@@ -54,6 +31,12 @@ class PhoneSearcher extends AbstractSpecialSearcher
             "$code$separator$main",
         ];
 
+        $code = $this->getCode(4);
+        $main = join($separator, array_fill(0, 6, '\d{1}'));
+
+        // (0412) 55-15-15
+        $list[] = "$code$separator$main";
+
         $regex = '@(' . join('|', $list). ')@';
 
         if (preg_match_all($regex, $subject, $matches)) {
@@ -61,5 +44,11 @@ class PhoneSearcher extends AbstractSpecialSearcher
         }
 
         return [];
+    }
+
+    private function getCode($length)
+    {
+        $digits = '\d{' . $length . '}';
+        return "(\($digits\)|$digits)";
     }
 }

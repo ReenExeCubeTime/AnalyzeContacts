@@ -90,6 +90,13 @@ class PhoneSearcherTest extends AbstractSearcherTest
                 '0562-323-000',
             ]
         ];
+
+        yield [
+            'Контакты: (0412) 55-15-15',
+            [
+                '(0412) 55-15-15',
+            ]
+        ];
     }
 
     protected function getSearcher()
