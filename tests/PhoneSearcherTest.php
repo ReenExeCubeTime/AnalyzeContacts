@@ -97,6 +97,14 @@ class PhoneSearcherTest extends AbstractSearcherTest
                 '(0412) 55-15-15',
             ]
         ];
+
+        yield [
+            'Контакты: +38 (0412) 46-02-02, +38 (050) 416-02-02',
+            [
+                '+38 (0412) 46-02-02',
+                '+38 (050) 416-02-02',
+            ]
+        ];
     }
 
     protected function getSearcher()

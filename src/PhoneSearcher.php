@@ -34,6 +34,8 @@ class PhoneSearcher extends AbstractSpecialSearcher
         $code = $this->getCode(4);
         $main = join($separator, array_fill(0, 6, '\d{1}'));
 
+        // +38 (0412) 46-02-02
+        $list[] = "$pre$separator$code$separator$main";
         // (0412) 55-15-15
         $list[] = "$code$separator$main";
 
