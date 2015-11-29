@@ -11,7 +11,7 @@ class PhoneSearcher extends AbstractSpecialSearcher
      */
     public function search($subject)
     {
-        $codes = [
+        $codeList = [
             '044',
 
             '050',
@@ -31,20 +31,25 @@ class PhoneSearcher extends AbstractSpecialSearcher
             '099',
         ];
 
-        $codes = join('|', $codes);
+        $codes = join('|', $codeList);
+
+        $mainList = [
+            '(\d{3}-\d{2}-\d{2})',
+            '(\d{3}-\d{1}-\d{3})',
+            '(\d{2}-\d{2}-\d{3})',
+            '(\d{3}-\d{4})',
+        ];
+
+        $mains = join('|', $mainList);
 
         $list = [
-            // (044) 465-5-465
-            "\(($codes)\) \d{3}-\d{1}-\d{3}",
             // +38 (044) 237-70-70
             "\+38 \(($codes)\) \d{3}-\d{2}-\d{2}",
             // 044-270-0000
-            "($codes)-\d{3}-\d{4}",
+            // (044) 465-5-465
             // (093)290-37-85
             // (093) 970-70-99
-            "\(($codes)\)(\s)?\d{3}-\d{2}-\d{2}",
-            // (044) 22-76-555
-            "\(($codes)\) \d{2}-\d{2}-\d{3}",
+            "\(?($codes)\)?( |-)?($mains)",
         ];
 
         $regex = '@(' . join('|', $list). ')@';
