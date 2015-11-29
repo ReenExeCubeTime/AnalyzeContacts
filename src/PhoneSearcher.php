@@ -41,9 +41,8 @@ class PhoneSearcher extends AbstractSpecialSearcher
             // 044-270-0000
             "($codes)-\d{3}-\d{4}",
             // (093)290-37-85
-            "\(($codes)\)\d{3}-\d{2}-\d{2}",
             // (093) 970-70-99
-            "\(($codes)\) \d{3}-\d{2}-\d{2}",
+            "\(($codes)\)(\s)?\d{3}-\d{2}-\d{2}",
             // (044) 22-76-555
             "\(($codes)\) \d{2}-\d{2}-\d{3}",
         ];
