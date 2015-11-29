@@ -74,6 +74,13 @@ class PhoneSearcherTest extends AbstractSearcherTest
                 '044 2337233',
             ]
         ];
+
+        yield [
+            'Контакты: 0562-323-000',
+            [
+                '0562-323-000',
+            ]
+        ];
     }
 
     protected function getSearcher()

@@ -12,7 +12,10 @@ class PhoneSearcher extends AbstractSpecialSearcher
     public function search($subject)
     {
         $codeList = [
+            // Київ
             '044',
+            // Дніпропетровськ
+            '056',
 
             '050',
             '063',
