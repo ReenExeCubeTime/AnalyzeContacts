@@ -11,7 +11,7 @@ class PhoneSearcher extends AbstractSpecialSearcher
      */
     public function search($subject)
     {
-        $pre = "\+?(38|8)";
+        $pre = "\+?(38|8|7)";
         $separator = '[ -]?';
 
         $code = $this->getCode(3);
@@ -50,7 +50,7 @@ class PhoneSearcher extends AbstractSpecialSearcher
         $regex = '@(' . join('|', $list). ')@';
 
         if (preg_match_all($regex, $subject, $matches)) {
-            return $matches[0];
+            return array_unique($matches[0]);
         }
 
         return [];
