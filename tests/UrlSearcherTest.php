@@ -1,6 +1,6 @@
 <?php
 
-use \ReenExe\UrlSearcher;
+use ReenExe\UrlSearcher;
 
 class UrlSearcherTest extends AbstractSearcherTest
 {
