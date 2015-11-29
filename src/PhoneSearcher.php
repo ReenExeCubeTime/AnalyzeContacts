@@ -37,7 +37,7 @@ class PhoneSearcher extends AbstractSpecialSearcher
 
         $list = [
             // +38 (044) 237-70-70
-            "\+38 \(($codes)\) \d{3}-\d{2}-\d{2}",
+            "\+38 \(($codes)\) $main",
             // 044-270-0000
             // (044) 465-5-465
             // (093)290-37-85
