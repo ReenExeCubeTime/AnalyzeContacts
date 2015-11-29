@@ -53,6 +53,20 @@ class PhoneSearcherTest extends AbstractSearcherTest
                 '(095) 283-19-91',
             ]
         ];
+
+        yield [
+            'Контакты: 8 (044) 237-93-93',
+            [
+                '8 (044) 237-93-93',
+            ]
+        ];
+
+        yield [
+            'Контакты: 0442772777',
+            [
+                '0442772777',
+            ]
+        ];
     }
 
     protected function getSearcher()
