@@ -33,7 +33,8 @@ class PhoneSearcher extends AbstractSpecialSearcher
 
         $codes = join('|', $codeList);
 
-        $main = join('( |-)?', array_fill(0, 7, '\d{1}'));
+        $separator = '( |-)?';
+        $main = join($separator, array_fill(0, 7, '\d{1}'));
 
         $list = [
             // +38 (044) 237-70-70
@@ -42,7 +43,7 @@ class PhoneSearcher extends AbstractSpecialSearcher
             // (044) 465-5-465
             // (093)290-37-85
             // (093) 970-70-99
-            "\(?($codes)\)?( |-)?($main)",
+            "\(?($codes)\)?$separator$main",
         ];
 
         $regex = '@(' . join('|', $list). ')@';
