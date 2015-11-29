@@ -30,9 +30,7 @@ class DetectiveTest extends \PHPUnit_Framework_TestCase
     {
         $default = [
             'phones' => [],
-            'emails' => [],
             'urls' => [],
-            'skypes' => [],
         ];
 
         foreach ($this->dataProvider() as list($subject, $expect)) {
@@ -48,6 +46,21 @@ class DetectiveTest extends \PHPUnit_Framework_TestCase
         yield [
             '',
             []
+        ];
+
+        yield [
+            'Контакты: (044) 465-5-465, (067) 465-5-465, (063) 465-5-465, (066) 348-9-888, Сайт: www.liketaxi.org',
+            [
+                'phones' => [
+                    '(044) 465-5-465',
+                    '(067) 465-5-465',
+                    '(063) 465-5-465',
+                    '(066) 348-9-888',
+                ],
+                'urls' => [
+                    'www.liketaxi.org'
+                ],
+            ]
         ];
     }
 }
