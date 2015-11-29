@@ -49,48 +49,5 @@ class DetectiveTest extends \PHPUnit_Framework_TestCase
             '',
             []
         ];
-
-        yield [
-            'Hi my name is Joe, I can be contacted at joe@mysite.com. I am also on Twitter.',
-            [
-                'emails' => ['joe@mysite.com']
-            ]
-        ];
-
-        yield [
-            'My: reen@mail.com and Friend: alex@mail.com',
-            [
-                'emails' => ['reen@mail.com', 'alex@mail.com']
-            ]
-        ];
-
-        yield [
-            'Сайт: www.ekonomtaxi.com.ua',
-            [
-                'urls' => [
-                    'www.ekonomtaxi.com.ua',
-                ]
-            ]
-        ];
-
-        yield [
-            'Контакты: taxi21.in.ua, www.taxi21.in.ua, http://www.taxi21.in.ua/',
-            [
-                'urls' => [
-                    'taxi21.in.ua',
-                    'www.taxi21.in.ua',
-                    'http://www.taxi21.in.ua/',
-                ]
-            ]
-        ];
-
-        yield [
-            'Контакты: www.kiev.taxico.com.ua',
-            [
-                'urls' => [
-                    'www.kiev.taxico.com.ua',
-                ]
-            ]
-        ];
     }
 }
