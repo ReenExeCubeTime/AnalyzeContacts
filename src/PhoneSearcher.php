@@ -21,6 +21,7 @@ class PhoneSearcher extends AbstractSpecialSearcher
         $list = [
             // +38 (044) 237-70-70
             // 8 (044) 237-93-93
+            // +7 (978) 100-41-40
             "$pre$separator$code$separator$main",
             // 044 2337233
             // 044-270-0000
