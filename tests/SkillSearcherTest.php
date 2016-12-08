@@ -7,7 +7,13 @@ use ReenExe\SkillSearcher;
 class SkillSearcherTest extends AbstractSearcherTest
 {
     private $words = [
-        'PHP'
+        'PHP',
+        'MySQL',
+        'JavaScript',
+        'Redis',
+        'Elasticsearch',
+        'Symfony',
+        'PHPUnit',
     ];
 
     public function dataProvider()
@@ -20,6 +26,26 @@ class SkillSearcherTest extends AbstractSearcherTest
         yield [
             'php',
             ['PHP']
+        ];
+
+        yield [
+            'PHP, MySQL, JavaScript',
+            ['PHP', 'MySQL', 'JavaScript']
+        ];
+
+        yield [
+            'PHP & MySQL & JavaScript',
+            ['PHP', 'MySQL', 'JavaScript']
+        ];
+
+        yield [
+            'PHP | MySQL | JavaScript',
+            ['PHP', 'MySQL', 'JavaScript']
+        ];
+
+        yield [
+            'In project we JavaScript in Front, PHP|MySQL in server, and Go in micro service',
+            ['PHP', 'MySQL', 'JavaScript']
         ];
     }
 
