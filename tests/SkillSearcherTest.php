@@ -7,14 +7,14 @@ use ReenExe\SkillSearcher;
 class SkillSearcherTest extends AbstractSearcherTest
 {
     private $words = [
-        'some'
+        'PHP'
     ];
 
     public function dataProvider()
     {
         yield [
-            'some',
-            ['some']
+            'PHP',
+            ['PHP']
         ];
     }
 
