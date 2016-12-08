@@ -20,32 +20,37 @@ class SkillSearcherTest extends AbstractSearcherTest
     {
         yield [
             'PHP',
-            ['PHP']
+            ['PHP'],
         ];
 
         yield [
             'php',
-            ['PHP']
+            ['PHP'],
         ];
 
         yield [
             'PHP, MySQL, JavaScript',
-            ['PHP', 'MySQL', 'JavaScript']
+            ['PHP', 'MySQL', 'JavaScript'],
         ];
 
         yield [
             'PHP & MySQL & JavaScript',
-            ['PHP', 'MySQL', 'JavaScript']
+            ['PHP', 'MySQL', 'JavaScript'],
         ];
 
         yield [
             'PHP | MySQL | JavaScript',
-            ['PHP', 'MySQL', 'JavaScript']
+            ['PHP', 'MySQL', 'JavaScript'],
         ];
 
         yield [
             'In project we JavaScript in Front, PHP|MySQL in server, and Go in micro service',
-            ['PHP', 'MySQL', 'JavaScript']
+            ['PHP', 'MySQL', 'JavaScript'],
+        ];
+
+        yield [
+            'use JS',
+            ['JavaScript']
         ];
     }
 
