@@ -16,6 +16,11 @@ class SkillSearcherTest extends AbstractSearcherTest
             'PHP',
             ['PHP']
         ];
+
+        yield [
+            'php',
+            ['PHP']
+        ];
     }
 
     protected function getSearcher()
