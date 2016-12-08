@@ -9,7 +9,7 @@ class SkillSearcherTest extends AbstractSearcherTest
     private $words = [
         'PHP',
         'MySQL',
-        'JavaScript',
+        ['JavaScript', 'JS'],
         'Redis',
         'Elasticsearch',
         'Symfony',

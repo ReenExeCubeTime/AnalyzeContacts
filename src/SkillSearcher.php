@@ -29,7 +29,14 @@ class SkillSearcher extends AbstractSpecialSearcher
     {
         $map = [];
         foreach ($skills as $skill) {
-            $map[strtolower($skill)] = $skill;
+            if (is_array($skill)) {
+                $main = $skill[0];
+                foreach ($skill as $alias) {
+                    $map[strtolower($alias)] = $main;
+                }
+            } else {
+                $map[strtolower($skill)] = $skill;
+            }
         }
         return $map;
     }
