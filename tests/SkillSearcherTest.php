@@ -14,6 +14,7 @@ class SkillSearcherTest extends AbstractSearcherTest
         'Elasticsearch',
         'Symfony',
         'PHPUnit',
+        ['React', 'React.js'],
     ];
 
     public function dataProvider()
@@ -50,7 +51,17 @@ class SkillSearcherTest extends AbstractSearcherTest
 
         yield [
             'use JS',
-            ['JavaScript']
+            ['JavaScript'],
+        ];
+
+        yield [
+            'React.js',
+            ['JavaScript', 'React'],
+        ];
+
+        yield [
+            'React',
+            ['React'],
         ];
     }
 
