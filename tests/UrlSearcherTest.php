@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests;
+
 use ReenExe\UrlSearcher;
 
 class UrlSearcherTest extends AbstractSearcherTest

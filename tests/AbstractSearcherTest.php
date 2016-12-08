@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests;
+
 use \ReenExe\SearcherInterface;
 
 abstract class AbstractSearcherTest extends \PHPUnit_Framework_TestCase

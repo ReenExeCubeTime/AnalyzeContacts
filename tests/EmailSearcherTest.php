@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests;
+
 use ReenExe\EmailSearcher;
 
 class EmailSearcherTest extends AbstractSearcherTest

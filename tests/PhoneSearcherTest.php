@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests;
+
 use ReenExe\PhoneSearcher;
 
 class PhoneSearcherTest extends AbstractSearcherTest
