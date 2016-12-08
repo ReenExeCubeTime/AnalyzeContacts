@@ -2,9 +2,9 @@
 
 namespace Tests;
 
-use ReenExe\WordSearcher;
+use ReenExe\SkillSearcher;
 
-class WordSearcherTest extends AbstractSearcherTest
+class SkillSearcherTest extends AbstractSearcherTest
 {
     private $words = [
         'some'
@@ -20,6 +20,6 @@ class WordSearcherTest extends AbstractSearcherTest
 
     protected function getSearcher()
     {
-        return new WordSearcher('words', $this->words);
+        return new SkillSearcher('skills', $this->words);
     }
 }

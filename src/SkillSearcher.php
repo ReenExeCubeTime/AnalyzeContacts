@@ -2,7 +2,7 @@
 
 namespace ReenExe;
 
-class WordSearcher extends AbstractSpecialSearcher
+class SkillSearcher extends AbstractSpecialSearcher
 {
     private $list;
 
